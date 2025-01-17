@@ -8,6 +8,10 @@ from datetime import datetime, timedelta, timezone
 import time
 import traceback
 import sys
+from dotenv import load_dotenv
+
+# 環境変数の読み込み
+load_dotenv()
 
 class VimeoDownloader:
     def __init__(self, token, key, secret):
@@ -194,9 +198,9 @@ def main():
 
     try:
         downloader = VimeoDownloader(
-            token='048f0e6bdc65168e9d451ea8ccaa1fcc',
-            key='411ff315d953e74016c8cd39de1dc6f3d17cfb2d',
-            secret='o/d//2R2Z49iap5HNpBog5Uh0X8Ib/58MNcCFJCgllrNE0/8OtjykIySlaqt/pwGpDTOoe6Cn2eN0ZwuuBg+YF/QcMi9xavGcqlkEl/mDCIRl41Wu5ql23D+vR18TDOB'
+            token=os.getenv('VIMEO_TOKEN'),
+            key=os.getenv('VIMEO_KEY'),
+            secret=os.getenv('VIMEO_SECRET')
         )
         
         csv_file = "vimeo_allvideos.csv"

@@ -16,3 +16,8 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp 
+
+# Project specific
+*.csv
+おそらくテスト段階/
+正常に動作している段階*/ 
